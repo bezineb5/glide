@@ -61,7 +61,7 @@ public interface Target<R> extends LifecycleListener {
      *          simply returned null).
      * @param errorDrawable The error drawable to optionally show, or null.
      */
-    void onLoadFailed(Exception e, Drawable errorDrawable);
+    void onLoadFailed(Throwable e, Drawable errorDrawable);
 
     /**
      * The method that will be called when the resource load has finished.

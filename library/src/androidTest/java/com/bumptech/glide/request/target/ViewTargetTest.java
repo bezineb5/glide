@@ -496,7 +496,7 @@ public class ViewTargetTest {
         }
 
         @Override
-        public void onLoadFailed(Exception e, Drawable errorDrawable) {
+        public void onLoadFailed(Throwable e, Drawable errorDrawable) {
 
         }
 

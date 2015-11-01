@@ -689,7 +689,7 @@ public class Glide {
         }
 
         @Override
-        public void onLoadFailed(Exception e, Drawable errorDrawable) {
+        public void onLoadFailed(Throwable e, Drawable errorDrawable) {
             // Do nothing.
         }
 

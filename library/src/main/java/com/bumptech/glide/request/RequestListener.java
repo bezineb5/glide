@@ -40,7 +40,7 @@ public interface RequestListener<T, R> {
      * @return True if the listener has handled updating the target for the given exception, false to allow
      *         Glide's request to update the target.
      */
-    boolean onException(Exception e, T model, Target<R> target, boolean isFirstResource);
+    boolean onException(Throwable e, T model, Target<R> target, boolean isFirstResource);
 
     /**
      * Called when a load completes successfully, immediately after

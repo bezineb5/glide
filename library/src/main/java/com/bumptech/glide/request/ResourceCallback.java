@@ -20,5 +20,5 @@ public interface ResourceCallback {
      * @param e The exception that caused the failure, or null it the load failed for some reason other than an
      *          exception.
      */
-    void onException(Exception e);
+    void onException(Throwable e);
 }

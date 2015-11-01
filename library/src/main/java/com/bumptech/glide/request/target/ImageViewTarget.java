@@ -55,7 +55,7 @@ public abstract class ImageViewTarget<Z> extends ViewTarget<ImageView, Z> implem
      * @param errorDrawable {@inheritDoc}
      */
     @Override
-    public void onLoadFailed(Exception e, Drawable errorDrawable) {
+    public void onLoadFailed(Throwable e, Drawable errorDrawable) {
         view.setImageDrawable(errorDrawable);
     }
 

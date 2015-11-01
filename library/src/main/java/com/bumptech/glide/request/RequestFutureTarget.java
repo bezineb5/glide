@@ -48,7 +48,7 @@ public class RequestFutureTarget<T, R> implements FutureTarget<R>, Runnable {
     private R resource;
     private Request request;
     private boolean isCancelled;
-    private Exception exception;
+    private Throwable exception;
     private boolean resultReceived;
     private boolean exceptionReceived;
 
@@ -146,7 +146,7 @@ public class RequestFutureTarget<T, R> implements FutureTarget<R>, Runnable {
      * A callback that should never be invoked directly.
      */
     @Override
-    public synchronized void onLoadFailed(Exception e, Drawable errorDrawable) {
+    public synchronized void onLoadFailed(Throwable e, Drawable errorDrawable) {
          // We might get a null exception.
         exceptionReceived = true;
         this.exception = e;

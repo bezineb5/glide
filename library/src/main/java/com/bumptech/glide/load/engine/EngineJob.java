@@ -39,7 +39,7 @@ class EngineJob implements EngineRunnable.EngineRunnableManager {
     // we've received them instead of relying on them to be non-null. See issue #180.
     private Resource<?> resource;
     private boolean hasResource;
-    private Exception exception;
+    private Throwable exception;
     private boolean hasException;
     // A set of callbacks that are removed while we're notifying other callbacks of a change in status.
     private Set<ResourceCallback> ignoredCallbacks;
@@ -163,7 +163,7 @@ class EngineJob implements EngineRunnable.EngineRunnableManager {
     }
 
     @Override
-    public void onException(final Exception e) {
+    public void onException(final Throwable e) {
         this.exception = e;
         MAIN_THREAD_HANDLER.obtainMessage(MSG_EXCEPTION, this).sendToTarget();
     }

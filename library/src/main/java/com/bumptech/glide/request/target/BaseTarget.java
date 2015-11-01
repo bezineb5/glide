@@ -62,7 +62,7 @@ public abstract class BaseTarget<Z> implements Target<Z> {
      * {@inheritDoc}
      */
     @Override
-    public void onLoadFailed(Exception e, Drawable errorDrawable) {
+    public void onLoadFailed(Throwable e, Drawable errorDrawable) {
         // Do nothing.
     }
 

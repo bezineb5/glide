@@ -407,7 +407,7 @@ public class GlideTest {
                 .load(string)
                 .listener(new RequestListener<String, GlideDrawable>() {
                     @Override
-                    public boolean onException(Exception e, String model, Target target, boolean isFirstResource) {
+                    public boolean onException(Throwable e, String model, Target target, boolean isFirstResource) {
                         if (!(e instanceof IOException)) {
                             throw new RuntimeException(e);
                         }

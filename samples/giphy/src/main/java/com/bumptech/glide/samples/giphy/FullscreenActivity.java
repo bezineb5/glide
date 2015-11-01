@@ -70,7 +70,7 @@ public class FullscreenActivity extends Activity {
                 )
                 .listener(new RequestListener<Object, GlideDrawable>() {
                     @Override
-                    public boolean onException(Exception e, Object model, Target<GlideDrawable> target,
+                    public boolean onException(Throwable e, Object model, Target<GlideDrawable> target,
                             boolean isFirstResource) {
                         return false;
                     }

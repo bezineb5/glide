@@ -389,7 +389,7 @@ public final class GenericRequest<A, T, Z, R> implements Request, SizeReadyCallb
       return fallbackDrawable;
     }
 
-    private void setErrorPlaceholder(Exception e) {
+    private void setErrorPlaceholder(Throwable e) {
         if (!canNotifyStatusChanged()) {
             return;
         }
@@ -537,7 +537,7 @@ public final class GenericRequest<A, T, Z, R> implements Request, SizeReadyCallb
      * A callback method that should never be invoked directly.
      */
     @Override
-    public void onException(Exception e) {
+    public void onException(Throwable e) {
         if (Log.isLoggable(TAG, Log.DEBUG)) {
             Log.d(TAG, "load failed", e);
         }

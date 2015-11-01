@@ -52,15 +52,15 @@ class EngineRunnable implements Runnable, Prioritized {
             return;
         }
 
-        Exception exception = null;
+        Throwable throwable = null;
         Resource<?> resource = null;
         try {
             resource = decode();
-        } catch (Exception e) {
+        } catch (Throwable e) {
             if (Log.isLoggable(TAG, Log.VERBOSE)) {
                 Log.v(TAG, "Exception decoding", e);
             }
-            exception = e;
+            throwable = e;
         }
 
         if (isCancelled) {
@@ -71,7 +71,7 @@ class EngineRunnable implements Runnable, Prioritized {
         }
 
         if (resource == null) {
-            onLoadFailed(exception);
+            onLoadFailed(throwable);
         } else {
             onLoadComplete(resource);
         }
@@ -85,7 +85,7 @@ class EngineRunnable implements Runnable, Prioritized {
         manager.onResourceReady(resource);
     }
 
-    private void onLoadFailed(Exception e) {
+    private void onLoadFailed(Throwable e) {
         if (isDecodingFromCache()) {
             stage = Stage.SOURCE;
             manager.submitForSource(this);
